@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>IRONLOG — Dashboard</title>
+<title>B.Fit — Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -153,7 +153,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100
 <body>
 
 <div id="loader" style="position:fixed;inset:0;background:var(--bg);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
-  <div class="loader-logo">IRONLOG</div>
+  <div class="loader-logo">B.Fit</div>
   <div class="loader-sub">LOADING DASHBOARD…</div>
 </div>
 
@@ -161,7 +161,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);min-height:100
 
 <div class="hdr">
   <div class="hdr-inner">
-    <div class="logo">IRONLOG <span>DASHBOARD</span></div>
+    <div class="logo">B.Fit <span>DASHBOARD</span></div>
     <div class="hdr-right">
       <div class="last-sync" id="lastSync"></div>
       <button class="refresh-btn" onclick="loadData()">⟳ Refresh</button>
@@ -347,7 +347,7 @@ window.onload = function() {
 function showError(msg) {
   document.getElementById('loader').innerHTML =
     '<div style="text-align:center;max-width:440px;padding:20px">' +
-    '<div style="font-family:var(--fh);font-size:2rem;letter-spacing:3px;color:var(--gold);margin-bottom:16px">IRONLOG</div>' +
+    '<div style="font-family:var(--fh);font-size:2rem;letter-spacing:3px;color:var(--gold);margin-bottom:16px">B.Fit</div>' +
     '<div style="font-family:var(--fm);font-size:.78rem;color:var(--red);margin-bottom:12px">' + msg + '</div>' +
     '<div style="font-family:var(--fm);font-size:.72rem;color:var(--muted);line-height:1.8;margin-bottom:20px;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px">' +
       '1. Open Apps Script editor<br>' +
@@ -363,7 +363,7 @@ function showError(msg) {
 function loadData() {
   document.getElementById('lastSync').textContent = 'Syncing…';
   document.getElementById('loader').innerHTML =
-    '<div class="loader-logo">IRONLOG</div><div class="loader-sub">LOADING DASHBOARD…</div>';
+    '<div class="loader-logo">B.Fit</div><div class="loader-sub">LOADING DASHBOARD…</div>';
   document.getElementById('loader').style.display = 'flex';
 
   // Timeout — if google.script.run doesn't respond in 6s, show error
