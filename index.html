@@ -869,7 +869,7 @@ function getPrev(n){
     for(var j=0;j<wlog[i].entries.length;j++){
       if(wlog[i].entries[j].exercise===n){
         var e=wlog[i].entries[j];
-        return {weight:e.weight,unit:e.unit,plates:e.plates,sets:e.sets,reps:e.reps,date:wlog[i].date,day:wlog[i].day};
+        return {weight:e.weight,unit:e.unit,plates:e.plates,sets:e.sets,reps:e.reps,rpe:e.rpe,date:wlog[i].date,day:wlog[i].day};
       }
     }
   }
@@ -898,8 +898,13 @@ function buildExList(day){
         return '<div class="sel-opt'+(r===defRep?' on':'')+'" id="reps_'+r+'_'+id+'" onclick="selReps(\''+id+'\',\''+r+'\')">'+r+'</div>';
       }).join('');
       var prevHTML=prev
-        ?'<span class="lbl">PREV ('+fd(prev.date)+' D'+prev.day+'): </span><span class="val">'+(prev.unit==='plates'?prev.plates+'pl':prev.weight+'kg')+(prev.sets?' · '+prev.sets+'×'+prev.reps:'')+'</span>'
-        :'<span class="lbl">First time — go for it!</span>';
+  ?'<span class="lbl">PREV ('+fd(prev.date)+' D'+prev.day+'): </span>'+
+   '<span class="val">'+
+   (prev.unit==='plates'?prev.plates+'pl':prev.weight+'kg')+
+   (prev.sets?' · '+prev.sets+'×'+prev.reps:'')+
+   (prev.rpe?' · RPE '+prev.rpe:'')+
+   '</span>'
+  :'<span class="lbl">First time — go for it!</span>';
       var rpeHTML=[7,8,9,10].map(function(r){
         return '<button class="rpe" id="rpe_'+id+'_'+r+'" onclick="pickRPE(\''+id+'\','+r+')">'+r+'</button>';
       }).join('');
